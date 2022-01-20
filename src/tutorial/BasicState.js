@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 // Bootstarp
-import { Row } from 'reactstrap'
+import { Row, Card, CardBody, Form, FormGroup } from 'reactstrap'
 // Mat-UI
-import Box from '@mui/material/Box'
 import Input from '@mui/material/Input'
 
 const BasicState = () => {
@@ -17,20 +16,21 @@ const BasicState = () => {
       <h1>Basic State</h1>
       <hr />
       <div className='w-100'>
-        <h4>
-          Typing
-        </h4>
-        <label>Result : {character}</label>
-          <Box
-            component="form"
-            sx={{
-              '& > :not(style)': { m: 1 },
-            }}
-            noValidate
-            autoComplete="off"
-          >
-          <Input defaultValue={character} onChange={changeCharacter} />
-        </Box>
+        <Card>
+          <CardBody>
+            <Form>
+              <FormGroup>
+                <h4>
+                  Typing
+                </h4>
+                <label>Result : <code>{character}</code></label>
+              </FormGroup>
+              <FormGroup>
+                <Input defaultValue={character} onChange={changeCharacter} />
+              </FormGroup>
+            </Form>
+          </CardBody>
+        </Card>
       </div>
     </Row>
   );
